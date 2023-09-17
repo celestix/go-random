@@ -9,7 +9,7 @@ For integers, there is a function for random selection from a range. For sequenc
 Download the package with the standard `go get` command:
 
 ```bash
-go get github.com/anonyindian/go-random
+go get github.com/celestix/go-random/v2
 ```
 
 ### Example
@@ -17,8 +17,8 @@ go get github.com/anonyindian/go-random
 Examples can be found in the [examples directory](examples).
 
 ## Documentation
-[![GoDoc](https://godoc.org/github.com/anonyindian/go-random?status.svg)](http://godoc.org/github.com/anonyindian/go-random)
+[![GoDoc](https://godoc.org/github.com/celestix/go-random/v2?status.svg)](http://godoc.org/github.com/celestix/go-random/v2)
 
 Full `go doc` style documentation for the package can be viewed online without
 installing this package by using the GoDoc site here: 
-https://pkg.go.dev/github.com/anonyindian/go-random
+https://pkg.go.dev/github.com/celestix/go-random/v2

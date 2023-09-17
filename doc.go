@@ -9,6 +9,6 @@ Example Usage:
 
 	fmt.Println(random.ChoiceString(people) + " will become " + random.ChoiceString(professions))
 
-The MIT License Copyright (c) 2021 Veer (anonyindian)
+The MIT License Copyright (c) 2023 Veer (celestix)
 */
 package random
