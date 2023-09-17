@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	random "github.com/anonyindian/go-random/v2"
+	random "github.com/celestix/go-random/v2"
 )
 
 func main() {
