@@ -3,11 +3,11 @@ package random_test
 import (
 	"fmt"
 
-	random "github.com/anonyindian/go-random"
+	random "github.com/anonyindian/go-random/v2"
 )
 
 func ExampleChoice() {
-	r := random.Choice("a", 1, true)
+	r := random.ChoiceAny("a", 1, true)
 	fmt.Println(r)
 	// Output: "a" or 1 or true
 }

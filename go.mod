@@ -1,3 +1,3 @@
-module github.com/anonyindian/go-random
+module github.com/anonyindian/go-random/v2
 
-go 1.17
+go 1.21

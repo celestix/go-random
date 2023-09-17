@@ -3,7 +3,7 @@ package random_test
 import (
 	"fmt"
 
-	random "github.com/anonyindian/go-random"
+	random "github.com/anonyindian/go-random/v2"
 )
 
 func ExampleChoiceN() {

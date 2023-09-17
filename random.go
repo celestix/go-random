@@ -1,7 +1,7 @@
 package random
 
 import (
-	"math/rand"
+	randPkg "math/rand"
 	"time"
 )
 
@@ -20,9 +20,11 @@ func Integer(startNum int, endNum int) (int, error) {
 	if (startNum > endNum) || (startNum == endNum) {
 		return 0, &Error{fn, ErrEndNumSmaller}
 	}
-	intslice := make([]int, 0)
+	intslice := make([]int, endNum-startNum+1)
+	index := 0
 	for i := startNum; i <= endNum; i++ {
-		intslice = append(intslice, i)
+		intslice[index] = i
+		index++
 	}
 	return ChoiceInt(intslice), nil
 }
@@ -105,6 +107,22 @@ func Float64N(startNum float64, endNum float64, n int) ([]float64, error) {
 	return r, nil
 }
 
+var rand = randPkg.New(
+	randPkg.NewSource(
+		time.Now().Unix(),
+	),
+)
+
 func init() {
-	rand.Seed(time.Now().UnixNano())
+	go func() {
+		ticker := time.NewTicker(time.Second * 2)
+		for range ticker.C {
+			rand = randPkg.New(
+				randPkg.NewSource(
+					time.Now().Unix(),
+				),
+			)
+		}
+
+	}()
 }

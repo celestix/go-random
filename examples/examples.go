@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	random "github.com/anonyindian/go-random"
+	random "github.com/anonyindian/go-random/v2"
 )
 
 func main() {
-	fmt.Println(random.ChoiceN(2, 1, 2, 3))
+	fmt.Println(random.ChoiceN(2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2434, 43453, 4354353, 445))
 	fmt.Println("Result of toss is", Toss())
 	fmt.Println("I rolled a dice and the result was", RollDice())
 	fmt.Println("Solve the jumbled sentence:", JumbleSentence("It's a sunny day"))
@@ -28,7 +28,7 @@ func RandomBoolGeneration() string {
 // A function which returns any one value from heads and tails with the help random.Choice()
 func Toss() string {
 	r := random.Choice("heads", "tails")
-	return fmt.Sprintf("%v", r)
+	return r
 }
 
 // A function which return number from 1 to 6 like on a dice of 6 faces.
@@ -50,12 +50,12 @@ func ChooseRandomPersonWithProfession() string {
 	people := []string{"John", "Maureen", "Will", "Heroki", "Vijay", "Bill", "Penni", "Dawn", "Judi"}
 	professions := []string{"doctor", "engineer", "programmer", "teacher", "nothing", "pilot", "scientist"}
 
-	return random.ChoiceString(people) + " will become " + random.ChoiceString(professions)
+	return random.Choice(people...) + " will become " + random.Choice(professions...)
 }
 
 // A function to let you know how does Shuffle functions work.
 // We've used random.ShuffleStrings() function to jumble the sentence of type string.
 // All the Shuffle functions are meant to be used in a similar way.
 func JumbleSentence(sentence string) string {
-	return strings.Join(random.ShuffleStrings(strings.Fields(sentence)), " ")
+	return strings.Join(random.Shuffle(strings.Fields(sentence)...), " ")
 }

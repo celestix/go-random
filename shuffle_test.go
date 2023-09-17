@@ -3,11 +3,11 @@ package random_test
 import (
 	"fmt"
 
-	random "github.com/anonyindian/go-random"
+	random "github.com/anonyindian/go-random/v2"
 )
 
 func ExampleShuffle() {
-	r := random.Shuffle("Hello", "World", 4455, 2283, true)
+	r := random.ShuffleAny("Hello", "World", 4455, 2283, true)
 	fmt.Println(r)
 	// Output: shuffled slice containing the provided args.
 }

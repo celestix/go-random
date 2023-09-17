@@ -1,13 +1,19 @@
 package random
 
-import (
-	"math/rand"
-)
+// Shuffle pseudo-randomizes the order of parameters.
+// it can be of any type: string, integer, floats, slices, bool, etc.
+// It returns the shuffled slice of type []T.
+func Shuffle[T any](a ...T) []T {
+	rand.Shuffle(len(a), func(i, j int) {
+		a[i], a[j] = a[j], a[i]
+	})
+	return a
+}
 
 // Shuffle pseudo-randomizes the order of parameters.
 // it can be of any type: string, integer, floats, slices, bool, etc.
 // It returns the shuffled slice of type []interface{}.
-func Shuffle(a ...interface{}) interface{} {
+func ShuffleAny(a ...any) []any {
 	rand.Shuffle(len(a), func(i, j int) {
 		a[i], a[j] = a[j], a[i]
 	})

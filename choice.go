@@ -1,13 +1,16 @@
 package random
 
-import (
-	"math/rand"
-)
+// ChoiceAny indexes its parameters and pick a random choice from them.
+// it can be of any type: string, integer, floats, slices, bool, etc.
+// It returns the randomly chosen value of input type.
+func Choice[T any](a ...T) T {
+	return a[rand.Intn(len(a))]
+}
 
-// Choice indexes its parameters and pick a random choice from them.
+// ChoiceAny indexes its parameters and pick a random choice from them.
 // it can be of any type: string, integer, floats, slices, bool, etc.
 // It returns the randomly chosen value of type interface{}.
-func Choice(a ...interface{}) interface{} {
+func ChoiceAny(a ...any) interface{} {
 	return a[rand.Intn(len(a))]
 }
 
